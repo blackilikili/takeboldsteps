@@ -19,6 +19,7 @@ npm run build    # production build into dist/
 | Header and footer | `src/components/` |
 | Pages | `src/pages/` (`index`, `about`, `services`, `contact`) |
 | Contact email | `src/pages/contact.astro` |
+| Photos | `src/data/photos.ts` (free Unsplash photos; swap in your own from `public/photos/`) |
 
 ## Deploying
 

@@ -1,9 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import Wave from '../components/Wave.astro';
 ---
 <Base title="About" description="About Steps Training & Events.">
   <section class="section">
-    <div class="container">
+    <div class="container split">
+      <div>
       <span class="eyebrow">About us</span>
       <h1>Every big change starts with a step</h1>
       <p class="lead">
@@ -11,8 +14,14 @@ import Base from '../layouts/Base.astro';
         training, development, better operations and well-run events.
       </p>
       <p><span class="placeholder-note">Placeholder:</span> add your story here: who you are, why you started Steps, and who you work with.</p>
+      </div>
+      <div class="about-photos">
+        <Photo name="teamTable" class="a1" />
+        <Photo name="trainingPresentation" class="a2" />
+      </div>
     </div>
   </section>
+  <Wave direction="down" />
   <section class="section section--tint">
     <div class="container">
       <h2>What we believe</h2>
@@ -24,3 +33,12 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 </Base>
+
+<style>
+  .about-photos { position: relative; padding: 0 0 80px 0; }
+  .about-photos :global(.a1) { aspect-ratio: 4 / 3.2; border-radius: 40px 160px 40px 40px; margin-left: 48px; }
+  .about-photos :global(.a2) {
+    position: absolute; left: 0; bottom: 0; width: 48%; aspect-ratio: 1; border-radius: 50%;
+    border: 8px solid #fff; box-shadow: 0 16px 40px rgba(17,17,17,.15);
+  }
+</style>

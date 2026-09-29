@@ -1,0 +1,11 @@
+---
+// A soft curved edge. `direction="down"` sits above a tinted section, `up` sits below it.
+interface Props { direction?: 'down' | 'up'; color?: string; }
+const { direction = 'down', color = 'var(--sky-light)' } = Astro.props;
+const d = direction === 'down'
+  ? 'M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z'
+  : 'M0,0 C360,60 1080,60 1440,0 L1440,0 L0,0 Z';
+---
+<svg class={`wave wave--${direction}`} viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+  <path d={d} fill={color} />
+</svg>

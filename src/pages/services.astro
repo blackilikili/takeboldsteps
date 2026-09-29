@@ -1,38 +1,64 @@
 ---
 import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import Wave from '../components/Wave.astro';
 import { services } from '../data/services';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Base title="Services" description="Training, development, organizational development, SOPs, team building and operations services.">
-  <section class="section">
+  <section class="section page-head">
     <div class="container">
       <span class="eyebrow">Services</span>
       <h1>How we can help</h1>
       <p class="lead">From training your people to tightening your operations, Steps supports every step of your growth.</p>
-      <div class="grid list">
-        {services.map((s, i) => (
-          <article class="card" id={s.id}>
+      <nav class="jump" aria-label="Services on this page">
+        {services.map((s) => <a href={`#${s.id}`}>{s.title}</a>)}
+      </nav>
+    </div>
+  </section>
+
+  <section class="rows">
+    <div class="container">
+      {services.map((s, i) => (
+        <article id={s.id} class:list={['split', 'row', { 'split--flip': i % 2 === 1 }]}>
+          <Photo name={s.photo} class={i % 2 === 0 ? 'shape-a' : 'shape-b'} />
+          <div>
             <span class="num">{String(i + 1).padStart(2, '0')}</span>
             <h2>{s.title}</h2>
-            <p>{s.text}</p>
-          </article>
-        ))}
-      </div>
-      <div class="cta">
-        <h2>Not sure where to start?</h2>
-        <p class="lead">Tell us what you're working on and we'll recommend the right step.</p>
-        <a class="btn" href={`${base}/contact/`}>Enquire now</a>
-      </div>
+            <p class="lead">{s.text}</p>
+            <a class="more" href={`${base}/contact/`}>Ask about {s.title.toLowerCase()} &rarr;</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <Wave direction="down" />
+  <section class="section section--tint cta">
+    <div class="container">
+      <h2>Not sure where to start?</h2>
+      <p class="lead">Tell us what you're working on and we'll recommend the right step.</p>
+      <a class="btn" href={`${base}/contact/`}>Enquire now</a>
     </div>
   </section>
 </Base>
 
 <style>
-  .list { margin-top: 36px; }
-  .card { scroll-margin-top: 96px; }
-  .card h2 { font-size: 1.35rem; }
-  .num { font-family: var(--font-display); font-weight: 900; color: var(--sky); font-size: 1.1rem; display: block; margin-bottom: 8px; }
-  .cta { margin-top: 64px; padding: 40px; border-radius: var(--radius); background: var(--sky-light); text-align: center; }
+  .page-head { padding-bottom: 32px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .jump a {
+    padding: .45em 1em; border-radius: 999px; background: var(--sky-light); color: var(--blue);
+    text-decoration: none; font-weight: 600; font-size: .9rem;
+  }
+  .jump a:hover { background: var(--blue); color: #fff; }
+  .rows { padding: 32px 0 88px; }
+  .row { padding: 48px 0; scroll-margin-top: 96px; }
+  .row :global(.photo) { aspect-ratio: 4 / 3; }
+  .row :global(.shape-a) { border-radius: 40px 140px 40px 40px; }
+  .row :global(.shape-b) { border-radius: 140px 40px 40px 40px; }
+  .num { font-family: var(--font-display); font-weight: 900; font-size: 1.1rem; color: var(--sky); display: block; margin-bottom: 8px; }
+  .more { font-weight: 700; font-family: var(--font-display); text-decoration: none; }
+  .more:hover { text-decoration: underline; }
+  .cta { text-align: center; }
   .cta .lead { margin: 0 auto 1.5em; }
-  @media (max-width: 640px) { .cta { padding: 28px 20px; } }
 </style>
