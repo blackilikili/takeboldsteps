@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import { services } from '../data/services';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base>
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">Steps Training &amp; Events</span>
+      <h1>Take bold steps.<br /><span class="accent">Grow with purpose.</span></h1>
+      <p class="lead">
+        Training, development and operations support that helps people, teams and
+        organizations build confidence, skills and momentum.
+      </p>
+      <div class="actions">
+        <a class="btn" href={`${base}/services/`}>Explore our services</a>
+        <a class="btn btn--ghost" href={`${base}/contact/`}>Book a call</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">What we do</span>
+      <h2>Helping people and organizations grow</h2>
+      <div class="grid">
+        {services.map((s) => (
+          <a class="card card-link" href={`${base}/services/#${s.id}`}>
+            <h3>{s.title}</h3>
+            <p>{s.short}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container steps">
+      <span class="eyebrow">How it works</span>
+      <h2>Three simple steps</h2>
+      <ol>
+        <li><strong>Talk.</strong> Tell us where you are and where you want to go.</li>
+        <li><strong>Plan.</strong> We design the training, program or support that fits your goals.</li>
+        <li><strong>Step up.</strong> We deliver, and you leave ready for the next step.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="container">
+      <h2>Ready to take your next step?</h2>
+      <p class="lead">Let's talk about what you want to achieve.</p>
+      <a class="btn" href={`${base}/contact/`}>Get in touch</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 96px 0 80px;
+    background:
+      radial-gradient(circle at 85% 30%, var(--sky) 0 90px, transparent 91px),
+      linear-gradient(180deg, #fff 0%, var(--sky-light) 100%);
+  }
+  .accent { color: var(--blue); }
+  .card-link { text-decoration: none; color: inherit; transition: transform .15s, box-shadow .15s; }
+  .card-link:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(27,79,156,.12); }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .steps ol { counter-reset: s; list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 16px; }
+  .steps li {
+    counter-increment: s; background: #fff; border-radius: var(--radius); padding: 20px 20px 20px 72px;
+    position: relative; border: 1px solid var(--line);
+  }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%; background: var(--blue); color: #fff;
+    display: grid; place-items: center; font-family: var(--font-display); font-weight: 800;
+  }
+  .cta-band { text-align: center; }
+  .cta-band .lead { margin: 0 auto 1.5em; }
+  @media (max-width: 640px) { .hero { background: linear-gradient(180deg, #fff 0%, var(--sky-light) 100%); padding: 64px 0; } }
+</style>

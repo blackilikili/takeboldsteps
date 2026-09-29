@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { services } from '../data/services';
+// TODO: replace with your real business email.
+const email = 'hello@example.com';
+---
+<Base title="Contact" description="Get in touch with Steps Training & Events.">
+  <section class="section">
+    <div class="container narrow">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's talk</h1>
+      <p class="lead">Tell us a little about what you're looking for and we'll get back to you.</p>
+
+      <!-- GitHub Pages can't process forms, so this opens the visitor's email app.
+           To receive submissions directly, swap in a form service (e.g. Formspree). -->
+      <form action={`mailto:${email}`} method="post" enctype="text/plain">
+        <label>Name <input name="name" required /></label>
+        <label>Email <input name="email" type="email" required /></label>
+        <label>I'm interested in
+          <select name="interest">
+            {services.map((s) => <option>{s.title}</option>)}
+            <option>Events</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Message <textarea name="message" rows="5"></textarea></label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      <p class="direct">Or email us directly at <a href={`mailto:${email}`}>{email}</a>.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .narrow { max-width: 640px; }
+  form { display: grid; gap: 16px; margin-top: 24px; }
+  label { display: grid; gap: 6px; font-weight: 600; font-family: var(--font-display); font-size: .95rem; }
+  input, select, textarea {
+    font: inherit; font-family: var(--font-body); font-weight: 400; padding: .75em .9em;
+    border: 1px solid var(--line); border-radius: 8px; width: 100%;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--sky); border-color: var(--sky); }
+  button { justify-self: start; cursor: pointer; font-size: 1rem; }
+  .direct { margin-top: 24px; color: var(--muted); }
+</style>

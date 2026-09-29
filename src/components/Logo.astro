@@ -1,0 +1,26 @@
+---
+// CSS approximation of the "sTeps — Training & Events" wordmark.
+// To use the real logo instead, add it as public/logo.png and set useImage = true.
+const useImage = false;
+const base = import.meta.env.BASE_URL;
+---
+{useImage ? (
+  <img src={`${base}logo.png`} alt="Steps Training & Events" class="logo-img" />
+) : (
+  <span class="logo" aria-label="Steps Training & Events">
+    <span class="word" aria-hidden="true">s<span class="t">T</span>e<span class="p">p</span>s</span>
+    <span class="tag" aria-hidden="true">Training &amp; Events</span>
+  </span>
+)}
+
+<style>
+  .logo { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; }
+  .word { font-family: var(--font-display); font-weight: 900; font-size: 2rem; letter-spacing: -.04em; color: var(--ink); }
+  .t { color: var(--blue); }
+  .p { color: var(--ink); text-shadow: 0 0 0 var(--sky); }
+  .tag {
+    margin-top: 3px; font-size: .55rem; letter-spacing: .25em; text-transform: uppercase;
+    border-top: 2px solid var(--blue); padding-top: 3px; color: var(--ink);
+  }
+  .logo-img { height: 48px; width: auto; }
+</style>

@@ -1,0 +1,29 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container inner">
+    <div>
+      <strong>Steps Training &amp; Events</strong>
+      <p>Take bold steps.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href={`${base}/about/`}>About</a>
+      <a href={`${base}/services/`}>Services</a>
+      <a href={`${base}/contact/`}>Contact</a>
+    </nav>
+  </div>
+  <div class="container copy">© {year} Steps Training &amp; Events</div>
+</footer>
+
+<style>
+  .site-footer { background: var(--ink); color: #cfd4da; padding: 48px 0 24px; margin-top: 0; }
+  .site-footer::before { content: ''; display: block; height: 4px; background: var(--blue); margin: -48px 0 44px; }
+  .inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  strong { color: #fff; font-family: var(--font-display); }
+  nav { display: flex; gap: 20px; flex-wrap: wrap; }
+  a { color: #fff; text-decoration: none; }
+  a:hover { color: var(--sky); }
+  .copy { font-size: .85rem; margin-top: 32px; color: #8a929c; }
+</style>

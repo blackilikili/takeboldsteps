@@ -1,0 +1,65 @@
+/* Brand colours taken from the Steps Training & Events logo */
+:root {
+  --blue: #1b4f9c;        /* the "T" and underline bars */
+  --blue-dark: #123a75;
+  --sky: #3aa0e0;         /* the circle accent */
+  --sky-light: #e8f4fc;
+  --ink: #111111;         /* the black letterforms */
+  --muted: #555b66;
+  --paper: #ffffff;
+  --line: #e3e6ea;
+
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius: 10px;
+  --max: 1100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--blue); }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -.02em; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 800; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p { margin: 0 0 1em; }
+
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+.section { padding: 72px 0; }
+.section--tint { background: var(--sky-light); }
+.eyebrow {
+  display: inline-block; font-family: var(--font-display); font-weight: 700;
+  font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: var(--blue);
+  margin-bottom: .75rem;
+}
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 60ch; }
+
+.btn {
+  display: inline-block; padding: .85em 1.6em; border-radius: 999px;
+  font-family: var(--font-display); font-weight: 700; text-decoration: none;
+  background: var(--blue); color: #fff; border: 2px solid var(--blue);
+  transition: background .15s, color .15s;
+}
+.btn:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+.btn--ghost { background: transparent; color: var(--blue); }
+.btn--ghost:hover { background: var(--blue); color: #fff; }
+
+.grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px; border-top: 4px solid var(--blue);
+}
+.card p { color: var(--muted); margin: 0; }
+
+.placeholder-note {
+  background: #fff8e1; border: 1px dashed #d9a400; padding: 2px 6px; border-radius: 4px;
+  font-size: .85em;
+}
