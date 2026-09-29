@@ -2,10 +2,10 @@
 // CSS approximation of the "sTeps — Training & Events" wordmark.
 // To use the real logo instead, add it as public/logo.png and set useImage = true.
 const useImage = false;
-const base = import.meta.env.BASE_URL;
+import { withBase } from '../lib/url';
 ---
 {useImage ? (
-  <img src={`${base}logo.png`} alt="Steps Training & Events" class="logo-img" />
+  <img src={withBase('logo.png')} alt="Steps Training & Events" class="logo-img" />
 ) : (
   <span class="logo" aria-label="Steps Training & Events">
     <span class="word" aria-hidden="true">s<span class="t">T</span>e<span class="p">p</span>s</span>

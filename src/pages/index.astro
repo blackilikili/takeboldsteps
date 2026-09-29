@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
-        <span class="eyebrow">Steps Training &amp; Events</span>
+        <span class="eyebrow">Experience learning</span>
         <h1>Take bold steps.<br /><span class="accent">Grow with purpose.</span></h1>
         <p class="lead">
           Training, development and operations support that helps people, teams and
@@ -23,8 +23,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
       <div class="hero-art" aria-hidden="false">
         <span class="dot"></span>
-        <Photo name="teamLaptops" class="hero-main" eager />
-        <Photo name="trainingConference" class="hero-small" eager />
+        <Photo name="beachTeam" class="hero-main" eager />
+        <Photo name="groupGame" class="hero-small" eager />
       </div>
     </div>
   </section>
@@ -57,8 +57,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="section section--tint feature">
     <div class="container split">
       <div class="collage">
-        <Photo name="teamCircle" class="c-main" />
-        <Photo name="teamTable" class="c-float" />
+        <Photo name="valuesWorkshop" class="c-main" />
+        <Photo name="legTie" class="c-float" />
       </div>
       <div>
         <span class="eyebrow">Team building</span>
@@ -82,8 +82,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="section feature">
     <div class="container split split--flip">
       <div class="collage">
-        <Photo name="workshopNotes" class="c-main alt" />
-        <Photo name="trainingWhiteboard" class="c-float left" />
+        <Photo name="trainingConference" class="c-main alt" />
+        <Photo name="participantGuides" class="c-float left" />
       </div>
       <div>
         <span class="eyebrow">Corporate training</span>
@@ -93,7 +93,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           built around your processes and your culture.
         </p>
         <ul class="ticks">
-          <li>Leadership, communication and customer service</li>
+          <li>Leadership and management training, with participant guides for every session</li>
           <li>Onboarding and SOP-based training for your teams</li>
           <li>On-site, off-site or blended delivery</li>
         </ul>
@@ -118,6 +118,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
   </section>
   <Wave direction="up" />
+
+  <!-- Gallery of real Steps events -->
+  <section class="section">
+    <div class="container">
+      <div class="intro">
+        <span class="eyebrow">From our events</span>
+        <h2>Learning you can see</h2>
+        <p class="lead">A few moments from recent Steps team building days and training sessions.</p>
+      </div>
+      <div class="gallery">
+        <Photo name="eventBanner" class="g-wide" />
+        <Photo name="groupGame" class="g-tall" />
+        <Photo name="legTie" class="g-tall" />
+        <Photo name="valuesWorkshop" class="g-sq" />
+        <Photo name="teamPlanning" class="g-sq" />
+        <Photo name="participantGuides" class="g-sq" />
+      </div>
+    </div>
+  </section>
 
   <!-- Call to action -->
   <section class="section">
@@ -206,6 +225,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .cta-copy p { font-size: 1.15rem; opacity: .9; margin-bottom: 1.5em; }
   :global(.btn--light) { background: #fff; color: var(--blue); border-color: #fff; }
   :global(.btn--light:hover) { background: var(--sky-light); border-color: var(--sky-light); color: var(--blue-dark); }
+
+  /* Gallery: mixed sizes and soft corners */
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 16px; }
+  .gallery :global(.photo) { border-radius: 24px; height: 100%; }
+  .gallery :global(.g-wide) { grid-column: span 2; border-radius: 24px 90px 24px 24px; }
+  .gallery :global(.g-tall) { grid-row: span 2; }
+  .gallery :global(.g-sq) { grid-column: span 2; }
+  .gallery :global(.g-sq:last-child) { border-radius: 24px 24px 90px 24px; }
+  @media (max-width: 900px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+    .gallery :global(.g-sq) { grid-column: span 1; }
+    .gallery :global(.g-sq:last-child) { grid-column: span 2; }
+  }
 
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }

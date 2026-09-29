@@ -25,14 +25,14 @@ export const services = [
   },
   {
     id: 'sop',
-    photo: 'workshopNotes' as PhotoKey,
+    photo: 'participantGuides' as PhotoKey,
     title: 'SOP Development',
     short: 'Clear standard operating procedures your team will follow.',
     text: 'We document, streamline and roll out standard operating procedures that make work consistent, trainable and scalable.',
   },
   {
     id: 'team-building',
-    photo: 'teamCircle' as PhotoKey,
+    photo: 'beachTeam' as PhotoKey,
     title: 'Team Building',
     short: 'Events and activities that bring teams together.',
     text: 'Engaging team building sessions and events that strengthen trust, communication and collaboration.',
