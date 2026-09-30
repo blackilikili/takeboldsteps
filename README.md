@@ -6,7 +6,7 @@ The website for **Steps Training & Events**, built with [Astro](https://astro.bu
 
 ```sh
 npm install
-npm run dev      # http://localhost:4321/takeboldsteps/
+npm run dev      # http://localhost:4321/
 npm run build    # production build into dist/
 ```
 
@@ -23,6 +23,9 @@ npm run build    # production build into dist/
 
 ## Deploying
 
-Pushing to `main` builds and deploys the site through `.github/workflows/deploy.yml`.
-Before the first deploy, go to **Settings → Pages** in the repo and set **Source** to **GitHub Actions**.
-The site will then be live at https://blackilikili.github.io/takeboldsteps/.
+Pushing builds and deploys the site through `.github/workflows/deploy.yml`.
+In the repo, **Settings → Pages → Source** must be set to **GitHub Actions**.
+
+The address comes from the repository name (see `astro.config.mjs`):
+a repo called `stepstraining.github.io` in the `stepstraining` organization is served at
+https://stepstraining.github.io/.
