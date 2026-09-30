@@ -1,0 +1,64 @@
+---
+// Brand illustration for services that have no photo (digital services).
+export type IconKey = 'lms' | 'design' | 'web' | 'automation';
+
+interface Props { icon: IconKey; class?: string; }
+const { icon, class: className = '' } = Astro.props;
+---
+<div class:list={['art', className]} role="img" aria-label={{
+  lms: 'Illustration of an online course with lessons and progress',
+  design: 'Illustration of a learning plan with connected lesson cards',
+  web: 'Illustration of a web page above a sales funnel',
+  automation: 'Illustration of connected apps passing work along',
+}[icon]}>
+  <svg viewBox="0 0 240 180" aria-hidden="true">
+    {icon === 'lms' && (
+      <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="40" y="30" width="160" height="100" rx="10" />
+        <path d="M20 146h200" />
+        <path d="M108 62v36l30-18z" fill="#fff" />
+        <path d="M60 116h120" opacity=".45" />
+        <path d="M60 116h70" />
+      </g>
+    )}
+    {icon === 'design' && (
+      <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="24" y="40" width="54" height="40" rx="8" />
+        <rect x="162" y="40" width="54" height="40" rx="8" />
+        <rect x="93" y="104" width="54" height="40" rx="8" />
+        <path d="M78 60h84M51 80v44h42M189 80v44h-42" />
+        <path d="M36 54h30M36 66h18M174 54h30M174 66h18M105 118h30M105 130h18" opacity=".7" />
+      </g>
+    )}
+    {icon === 'web' && (
+      <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="40" y="18" width="160" height="70" rx="10" />
+        <path d="M40 38h160" />
+        <circle cx="54" cy="28" r="2" fill="#fff" /><circle cx="64" cy="28" r="2" fill="#fff" /><circle cx="74" cy="28" r="2" fill="#fff" />
+        <path d="M58 56h60M58 70h36" opacity=".7" />
+        <path d="M66 106h108l-34 32v22l-40 10v-32z" />
+      </g>
+    )}
+    {icon === 'automation' && (
+      <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="50" cy="90" r="22" />
+        <circle cx="190" cy="50" r="22" />
+        <circle cx="190" cy="130" r="22" />
+        <path d="M72 84l96-28M72 96l96 28" />
+        <path d="M150 58l18-2-8 16M150 122l18 2-8-16" />
+        <circle cx="50" cy="90" r="6" fill="#fff" /><circle cx="190" cy="50" r="6" fill="#fff" /><circle cx="190" cy="130" r="6" fill="#fff" />
+      </g>
+    )}
+  </svg>
+</div>
+
+<style>
+  .art {
+    display: grid; place-items: center; overflow: hidden;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(255,255,255,.18) 0 60px, transparent 61px),
+      linear-gradient(135deg, var(--blue) 0%, var(--sky) 100%);
+    border-radius: 28px;
+  }
+  svg { width: 62%; height: auto; }
+</style>
