@@ -18,7 +18,7 @@ npm run build    # production build into dist/
 | Logo | `src/components/Logo.astro` (add `public/logo.png` and set `useImage = true`) |
 | Header and footer | `src/components/` |
 | Pages | `src/pages/` (`index`, `about`, `services`, `contact`) |
-| Contact email | `src/pages/contact.astro` |
+| Contact email | `src/data/site.ts` |
 | Photos | `src/data/photos.ts` (free Unsplash photos; swap in your own from `public/photos/`) |
 
 ## Deploying
