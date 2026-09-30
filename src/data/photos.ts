@@ -37,6 +37,22 @@ export const photos = {
     src: local('event-banner.webp'),
     alt: 'Steps Training & Events team building banner at an event tent',
   },
+  missionVision: {
+    src: local('mission-vision-workshop.webp'),
+    alt: 'Participants working on mission and vision cards during a Steps workshop',
+  },
+  coachingForms: {
+    src: local('coaching-forms.webp'),
+    alt: 'Coaching forms prepared for a Steps coaching and development session',
+  },
+  congaLine: {
+    src: local('conga-line.webp'),
+    alt: 'A blindfolded team moving together in a line during an outdoor team building game',
+  },
+  beachGame: {
+    src: local('beach-game.webp'),
+    alt: 'A facilitator guiding teams seated in rows during a beach team building game',
+  },
   // Stock: corporate training
   trainingConference: {
     src: unsplash('photo-1540575467063-178a50c2df87'),
@@ -45,18 +61,6 @@ export const photos = {
   trainingMeeting: {
     src: unsplash('photo-1556761175-5973dc0f32e7'),
     alt: 'Colleagues in a corporate training session around a meeting table',
-  },
-  trainingWhiteboard: {
-    src: unsplash('photo-1531482615713-2afd69097998'),
-    alt: 'Two colleagues working through ideas at a whiteboard',
-  },
-  trainingPresentation: {
-    src: unsplash('photo-1517048676732-d65bc937f952'),
-    alt: 'A facilitator leading a small group discussion with laptops',
-  },
-  trainingWorkshop: {
-    src: unsplash('photo-1552664730-d307ca884978'),
-    alt: 'Workshop participants planning with sticky notes on a wall',
   },
 };
 

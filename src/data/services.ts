@@ -40,7 +40,7 @@ export const services: Service[] = [
   {
     id: 'development',
     group: 'people',
-    photo: 'trainingWhiteboard',
+    photo: 'coachingForms',
     title: 'Development',
     short: 'Growth plans that help individuals reach their potential.',
     text: 'Personal and professional development that builds confidence, capability and a clear path to the next step.',
@@ -48,7 +48,7 @@ export const services: Service[] = [
   {
     id: 'organizational-development',
     group: 'people',
-    photo: 'trainingPresentation',
+    photo: 'missionVision',
     title: 'Organizational Development',
     short: 'Stronger structures, culture and leadership.',
     text: 'We help organizations align structure, culture and leadership so teams can perform and grow together.',

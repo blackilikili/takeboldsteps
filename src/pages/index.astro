@@ -87,7 +87,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <section class="section feature">
     <div class="container split split--flip">
       <div class="collage">
-        <Photo name="trainingConference" class="c-main alt" />
+        <Photo name="missionVision" class="c-main alt" />
         <Photo name="participantGuides" class="c-float left" />
       </div>
       <div>
@@ -98,7 +98,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           built around your processes and your culture.
         </p>
         <ul class="ticks">
-          <li>Leadership and management training, with participant guides for every session</li>
+          <li>Leadership, customer service and sales training, with participant guides for every session</li>
           <li>Onboarding and SOP-based training for your teams</li>
           <li>On-site, off-site or blended delivery</li>
         </ul>
@@ -136,9 +136,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <Photo name="eventBanner" class="g-wide" />
         <Photo name="groupGame" class="g-tall" />
         <Photo name="legTie" class="g-tall" />
-        <Photo name="valuesWorkshop" class="g-sq" />
+        <Photo name="congaLine" class="g-wide" />
+        <Photo name="beachGame" class="g-big" />
+        <Photo name="valuesWorkshop" class="g-wide" />
         <Photo name="teamPlanning" class="g-sq" />
-        <Photo name="participantGuides" class="g-sq" />
+        <Photo name="coachingForms" class="g-sq g-last" />
       </div>
     </div>
   </section>
@@ -247,17 +249,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   :global(.btn--light) { background: #fff; color: var(--blue); border-color: #fff; }
   :global(.btn--light:hover) { background: var(--sky-light); border-color: var(--sky-light); color: var(--blue-dark); }
 
-  /* Gallery: mixed sizes and soft corners */
+  /* Gallery: mixed sizes and soft corners (4 columns x 4 rows, every cell filled) */
   .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 16px; }
   .gallery :global(.photo) { border-radius: 24px; height: 100%; }
-  .gallery :global(.g-wide) { grid-column: span 2; border-radius: 24px 90px 24px 24px; }
+  .gallery :global(.g-wide) { grid-column: span 2; }
   .gallery :global(.g-tall) { grid-row: span 2; }
-  .gallery :global(.g-sq) { grid-column: span 2; }
-  .gallery :global(.g-sq:last-child) { border-radius: 24px 24px 90px 24px; }
+  .gallery :global(.g-big) { grid-column: span 2; grid-row: span 2; border-radius: 24px 24px 24px 90px; }
+  .gallery :global(.g-wide:first-child) { border-radius: 24px 90px 24px 24px; }
+  .gallery :global(.g-last) { border-radius: 24px 24px 90px 24px; }
   @media (max-width: 900px) {
-    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
-    .gallery :global(.g-sq) { grid-column: span 1; }
-    .gallery :global(.g-sq:last-child) { grid-column: span 2; }
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+    .gallery :global(.g-big) { grid-row: span 1; }
   }
 
   @media (max-width: 900px) {
